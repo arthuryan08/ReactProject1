@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import PlacarContainer from './components/PlacarContainer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const dados = {
+    partida: {
+        estadio: "Castelão/MA",
+        data: "01/08/2021",
+        hora: "15h"
+    },
+    casa: {
+        nome: "Sampaio",
+    },
+    visitante:{
+        nome: "MotoClube",
+    },
 }
 
-export default App;
+export default function Welcome(props) {
+    return (
+        <>
+            <PlacarContainer partida={dados.partida}
+                             casa={dados.casa}
+                             visitante={dados.visitante}/>
+        </>
+    )
+}
